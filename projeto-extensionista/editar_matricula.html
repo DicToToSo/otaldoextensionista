@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Matrícula</title>
+    <script src="validacoes.js"></script>
+</head>
+<body>
+    <h2>Editar Matrícula</h2>
+    <form action="editar_matricula.php" method="POST">
+        <input type="hidden" name="id" value="1" id="idMatricula">
+        <label for="nome">Nome do Aluno:</label>
+        <input type="text" name="nome" id="nome" required><br><br>
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" name="dataNascimento" id="dataNascimento" required><br><br>
+        <label for="turma">Turma:</label>
+        <select name="turma" id="turma" required></select><br><br>
+        <div id="responsavelDiv" style="display:none;">
+            <label for="responsavel">Nome do Responsável:</label>
+            <input type="text" name="responsavel" id="responsavel">
+        </div><br>
+        <button type="submit">Salvar</button>
+    </form>
+    <script>
+        window.onload = function () {
+            document.getElementById('dataNascimento').addEventListener('change', atualizarCampos);
+        }
+    </script>
+</body>
+</html>
